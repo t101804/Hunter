@@ -60,7 +60,7 @@ chmod +x hunter_linux
 here are 3 documentations : 
 - [application](#application)
 - [server repproject](#server-repproject-vip)
-- custom server
+- [custom server](#custom-server)
 
 
 ## Application
