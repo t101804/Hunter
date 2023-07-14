@@ -1,6 +1,6 @@
 
 <head>
-<div class="header">
+<div class="header" align="center">
     <a href="https://repcyber.com"><img src="static/icon.png" alt="Hunter"></a>
     <h1>Hunter by @repproject</h1>
   </div>
