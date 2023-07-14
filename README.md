@@ -143,10 +143,17 @@ example usage :
 - ```"custom_header": ["Content-Type:*/*", "User-agent:Mozilla/5.0"],```
 
 
-### "post_data" 
+### "post_data ( use this if you using post method )" 
+example usage :
+- ```"post_data": "param1=value&param2=value2",```
 
 ### "regex" : 
+<b>if your regex contains " escape with \ so it will be \" for the escape</b>
+example usage :
+- ```"regex": "/site/(.*?)\""```
 
+# Credits : 
+https://t.me//CallMeRep
 <!-- ## Custom-server templates instuctions
 ```json
 "": {
