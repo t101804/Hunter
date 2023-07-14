@@ -41,16 +41,15 @@ Back to explaining what Hunter is. Hunter is used to send requests across target
 Hunter not requires anything because its already compiled . it works on cross-platforms such as Unix,Windows and MacOS
 
 Unix/Linux System
+
 ```sh
 git clone https://github.com/t101804/Hunter.git 
 cd Hunter 
 chmod +x hunter_linux 
 ./hunter_linux 
 ```
-if you have error Error /lib/x86_64-linux-gnu/libc.so.6: version not found do this :
+If you using get error "/lib/x86_64-linux-gnu/libc.so.6: version not found do command : 
 ```sh
-sudo add-apt-repository 'deb http://cz.archive.ubuntu.com/ubuntu jammy main'
-sudo update
 sudo apt install libc6
 ```
 <details>
