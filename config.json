@@ -1,0 +1,51 @@
+{
+    "application": {
+        "apikey_repproject": "cokkontol",
+        "reqtimeout": 60,
+        "reqmaxbytes": "40mb",
+        "envpath": "env.txt"
+    },
+    "server": {
+        "server_reverse_ip": {
+          "all records ( grab all of records )": "https://repcyber.com/allreverse/{ip}",
+          "a records ( a tld domains only )": "https://repcyber.com/reverse/{ip}",
+          "ns records ( nameserver only )": "https://repcyber.com/revip_ns/{ip}",
+          "mx recods ( mailserver only )": "https://repcyber.com/revip_mx/{ip}",
+          "cname records ( cname only )": "https://repcyber.com/revip_cname/{ip}"
+        },
+        "server_grabber": {
+          "grab ip records": "https://repcyber.com/vipgrab/ip/{total}",
+          "grab amazon records": "https://repcyber.com/vipgrab/amazonaws.com/total/{total}",
+          "grab tld domain records": ""
+        },
+        "server_utility": {
+          "analyze site ( check cms and tech )": "https://repcyber.com/analyzer/{site}",
+          "cpanel checker": "https://repcyber.com/checker/cpanel/{raw_lists}"
+        }
+    },
+    "custom_server": {
+        "ip grabber by bitvzero": {
+            "url": "http://bitverzo.com/recent_ip?p={page}",
+            "method": "get",
+            "custom_header": ["Content-Type:*/*", "User-agent:Mozilla/5.0"],
+            "post_data": "",
+            "regex": "/ip/(.*?)\""
+        },
+        "web grabber by cubdomains": {
+            "url": "https://www.cubdomain.com/domains-registered-by-date/2023-07-09/{page}",
+            "method": "get",
+            "custom_header": ["Content-Type:*/*", "User-agent:Mozilla/5.0"],
+            "post_data": "",
+            "regex": "/site/(.*?)\""
+
+        },
+        "you can add your own server/site that you want to grab, set in settings":{
+            "url": "",
+            "method": "",
+            "custom_header": ["Accept:*/*","X-Api-Key:Memek"],
+            "total_page": "",
+            "post_data": "param1=value1&param2=value2",
+            "regex": ""
+        }
+    }
+}
