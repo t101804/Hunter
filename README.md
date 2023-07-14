@@ -47,6 +47,12 @@ cd Hunter
 chmod +x hunter_linux 
 ./hunter_linux 
 ```
+if you have error Error /lib/x86_64-linux-gnu/libc.so.6: version not found do this :
+```sh
+sudo add-apt-repository 'deb http://cz.archive.ubuntu.com/ubuntu jammy main'
+sudo update
+sudo apt install libc6
+```
 <details>
   <summary>Windows</summary>
   <a href="https://github.com/t101804/Hunter/archive/refs/heads/main.zip">Download directly</a>
