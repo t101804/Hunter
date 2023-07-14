@@ -147,7 +147,7 @@ example usage :
 example usage :
 - ```"post_data": "param1=value&param2=value2",```
 
-### "regex" : 
+### "regex" ( keep it blank if you want save all pages ): 
 <b>if your regex contains " escape with \ so it will be \" for the escape</b>
 example usage :
 - ```"regex": "/site/(.*?)\""```
