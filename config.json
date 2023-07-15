@@ -43,7 +43,6 @@
             "url": "",
             "method": "",
             "custom_header": ["Accept:*/*","X-Api-Key:Memek"],
-            "total_page": "",
             "post_data": "param1=value1&param2=value2",
             "regex": ""
         }
