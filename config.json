@@ -2,8 +2,7 @@
     "application": {
         "apikey_repproject": "cokkontol",
         "reqtimeout": 60,
-        "reqmaxbytes": "40mb",
-        "envpath": "env.txt"
+        "reqmaxbytes": "40mb"
     },
     "server": {
         "server_reverse_ip": {
@@ -43,7 +42,6 @@
             "url": "",
             "method": "",
             "custom_header": ["Accept:*/*","X-Api-Key:Memek"],
-            "total_page": "",
             "post_data": "param1=value1&param2=value2",
             "regex": ""
         }
