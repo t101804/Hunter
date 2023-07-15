@@ -2,8 +2,7 @@
     "application": {
         "apikey_repproject": "cokkontol",
         "reqtimeout": 60,
-        "reqmaxbytes": "40mb",
-        "envpath": "env.txt"
+        "reqmaxbytes": "40mb"
     },
     "server": {
         "server_reverse_ip": {
