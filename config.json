@@ -2,6 +2,7 @@
     "application": {
         "apikey_repproject": "cokkontol",
         "reqtimeout": 60,
+        "save-error": "off",
         "reqmaxbytes": "40mb"
     },
     "server": {
@@ -38,12 +39,19 @@
             "regex": "/site/(.*?)\""
 
         },
-        "you can add your own server/site that you want to grab, set in settings":{
-            "url": "",
-            "method": "",
-            "custom_header": ["Accept:*/*","X-Api-Key:Memek"],
-            "post_data": "param1=value1&param2=value2",
-            "regex": ""
+        "leakix":{
+            "url": "https://leakix.net/search?page={page}&q=sftp&scope=leak",
+            "method": "get",
+            "custom_header": [""],
+            "post_data": "",
+            "regex": "/domain/(.*?)\""
+        },
+        "rapiddns":{
+            "url": "https://rapiddns.io/sameip/{ip}?full=1",
+            "method": "get",
+            "custom_header": [""],
+            "post_data": "",
+            "regex": "<td>(.*?)</td>"
         }
     }
 }
