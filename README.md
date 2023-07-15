@@ -50,6 +50,8 @@ chmod +x hunter_linux
 ```
 If you using get error "/lib/x86_64-linux-gnu/libc.so.6: version not found do command : 
 ```sh
+sudo add-apt-repository 'deb http://cz.archive.ubuntu.com/ubuntu jammy main'
+sudo update
 sudo apt install libc6
 ```
 <details>
