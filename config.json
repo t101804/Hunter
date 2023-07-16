@@ -38,20 +38,6 @@
             "post_data": "",
             "regex": "/site/(.*?)\""
 
-        },
-        "leakix":{
-            "url": "https://leakix.net/search?page={page}&q=sftp&scope=leak",
-            "method": "get",
-            "custom_header": [""],
-            "post_data": "",
-            "regex": "/domain/(.*?)\""
-        },
-        "rapiddns":{
-            "url": "https://rapiddns.io/sameip/{ip}?full=1",
-            "method": "get",
-            "custom_header": [""],
-            "post_data": "",
-            "regex": "<td>(.*?)</td>"
         }
     }
 }
