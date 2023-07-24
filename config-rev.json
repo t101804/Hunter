@@ -1,0 +1,78 @@
+{
+  "application": {
+    "apikey_repproject": "cokkontol",
+    "reqmaxbytes": "40mb",
+    "reqtimeout": 60,
+    "save-error": "on"
+  },
+  "custom_server": {
+    "ip grabber by bitvzero": {
+      "custom_header": [
+        "Content-Type:*/*",
+        "User-agent:Mozilla/5.0"
+      ],
+      "method": "get",
+      "post_data": "",
+      "regex": "/ip/(.*?)\"",
+      "url": "http://bitverzo.com/recent_ip?p={page}"
+    },
+    "web grabber by cubdomains": {
+      "custom_header": [
+        "Content-Type:*/*",
+        "User-agent:Mozilla/5.0"
+      ],
+      "method": "get",
+      "post_data": "",
+      "regex": "/site/(.*?)\"",
+      "url": "https://www.cubdomain.com/domains-registered-by-date/2023-07-09/{page}"
+    },
+    "reverse ip rostova":{
+      "custom_header": [
+        "Content-Type:*/*",
+        "User-agent:Mozilla/5.0"
+      ],
+      "method": "get",
+      "post_data": "",
+      "regex": "(?:\"|')(?P<domain>[a-zA-Z0-9-]+\\.[a-zA-Z]{2,})(?:\"|')",
+      "url": "https://api.rostovabrothers.com/api?ip={ip}"
+    },
+    "reverse ip helixs using domain lists dont use http":{
+      "custom_header": [
+        "Content-Type:*/*",
+        "User-agent:Mozilla/5.0"
+      ],
+      "method": "get",
+      "post_data": "",
+      "regex": "\b[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+\b",
+      "url": "https://tools.helixs.id/API/revip.php?domain={raw_lists}"
+    },
+    "reverse ip webscan ( can use ip or sites without http )":{
+      "custom_header": [
+        "Content-Type:*/*",
+        "User-agent:Mozilla/5.0"
+      ],
+      "method": "get",
+      "post_data": "",
+      "regex": "/site_.*/\" target=\"_blank\">(.*?)</a>",
+      "url": "https://webscan.cc/site_{raw_lists}/"
+    }
+  },
+  "server": {
+    "server_grabber": {
+      "grab amazon records": "https://repcyber.com/vipgrab/amazonaws.com/total/{total}",
+      "grab ip records": "https://repcyber.com/vipgrab/ip/{total}",
+      "grab tld domain records": ""
+    },
+    "server_reverse_ip": {
+      "a records ( a tld domains only )": "https://repcyber.com/reverse/{ip}",
+      "all records ( grab all of records )": "https://repcyber.com/allreverse/{ip}",
+      "cname records ( cname only )": "https://repcyber.com/revip_cname/{ip}",
+      "mx recods ( mailserver only )": "https://repcyber.com/revip_mx/{ip}",
+      "ns records ( nameserver only )": "https://repcyber.com/revip_ns/{ip}"
+    },
+    "server_utility": {
+      "analyze site ( check cms and tech )": "https://repcyber.com/analyzer/{site}",
+      "cpanel checker": "https://repcyber.com/checker/cpanel/{raw_lists}"
+    }
+  }
+}
