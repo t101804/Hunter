@@ -1,39 +1,84 @@
 {
     "application": {
         "apikey_repproject": "asw",
-        "reqmaxbytes": "10000mb",
         "reqtimeout": 25,
-        "save-error": "on"
+        "save-error": "on",
+        "reqmaxbytes": "10000mb"
     },
-    "comment":"please copy paste the rentry config templates ( reverse/grabber/etc ) in below",
+    "server": {
+        "server_reverse_ip": {
+          "all records ( grab all of records )": "https://repcyber.com/allreverse/{ip}",
+          "a records ( a tld domains only )": "https://repcyber.com/reverse/{ip}",
+          "ns records ( nameserver only )": "https://repcyber.com/revip_ns/{ip}",
+          "mx recods ( mailserver only )": "https://repcyber.com/revip_mx/{ip}",
+          "cname records ( cname only )": "https://repcyber.com/revip_cname/{ip}"
+        },
+        "server_grabber": {
+          "grab ip records": "https://repcyber.com/vipgrab/ip/{total}",
+          "grab amazon records": "https://repcyber.com/vipgrab/amazonaws.com/total/{total}",
+          "grab tld domain records": ""
+        },
+        "server_utility": {
+          "analyze site ( check cms and tech )": "https://repcyber.com/analyzer/{site}",
+          "cpanel checker": "https://repcyber.com/checker/cpanel/{raw_lists}"
+        }
+    },
     "custom_server": {
-        "You Can Put Any Custom Config": {
+        "ip grabber by bitvzero": {
+            "url": "http://bitverzo.com/recent_ip?p={page}",
+            "method": "get",
+            "custom_header": ["Content-Type:*/*", "User-agent:Mozilla/5.0"],
+            "post_data": "",
+            "regex": "/ip/(.*?)\""
+        },
+        "web grabber by cubdomains": {
+            "url": "https://www.cubdomain.com/domains-registered-by-date/2023-07-09/{page}",
+            "method": "get",
+            "custom_header": ["Content-Type:*/*", "User-agent:Mozilla/5.0"],
+            "post_data": "",
+            "regex": "/site/(.*?)\""
+
+        },
+        "Reverse IP seo-auditor post methods": {
             "custom_header": [
-                "Content-Type:*/*",
-                "User-agent:Mozilla/5.0"
+                "referer:tools.seo-auditor.com.ru/check-ip/"
+            ],
+            "method": "post",
+            "post_data": "url={ip}",
+            "regex": "<th align=\"left\" nowrap>\u0414\u043E\u043C\u0435\u043D:<\/th>\\s+<td width=\"100%\">(.*?)<\/td>",
+            "url": "https://tools.seo-auditor.com.ru/tools/check-ip/"
+        },
+        "Reverse IP seo-auditor Get": {
+            "custom_header": [
+                
             ],
             "method": "get",
             "post_data": "",
-            "regex": "RegexOfTheResults",
-            "url": "ExampleUrlOfTheCustomServer"
-        }
-    },
-    "server": {
-        "server_grabber": {
-            "grab amazon records": "https://repcyber.com/vipgrab/amazonaws.com/total/{total}",
-            "grab ip records": "https://repcyber.com/vipgrab/ip/{total}",
-            "grab tld domain records": ""
+            "regex": "\"\\d+\";\"([^\"]+)\"",
+            "url": "https://tools.seo-auditor.com.ru/ip-site/export/ip-site_{ip}.csv"
         },
-        "server_reverse_ip": {
-            "a records ( a tld domains only )": "https://repcyber.com/reverse/{ip}",
-            "all records ( grab all of records )": "https://repcyber.com/allreverse/{ip}",
-            "cname records ( cname only )": "https://repcyber.com/revip_cname/{ip}",
-            "mx recods ( mailserver only )": "https://repcyber.com/revip_mx/{ip}",
-            "ns records ( nameserver only )": "https://repcyber.com/revip_ns/{ip}"
+        "leakix":{
+            "url": "https://leakix.net/search?page={page}&q=sftp&scope=leak",
+            "method": "get",
+            "custom_header": [""],
+            "post_data": "",
+            "regex": "/domain/(.*?)\""
         },
-        "server_utility": {
-            "analyze site ( check cms and tech )": "https://repcyber.com/analyzer/{site}",
-            "cpanel checker": "https://repcyber.com/checker/cpanel/{raw_lists}"
+        "rapiddns":{
+            "url": "https://rapiddns.io/sameip/{ip}?full=1",
+            "method": "get",
+            "custom_header": [""],
+            "post_data": "",
+            "regex": "<td>(.*?)</td>"
+        },
+        "Subdomains Scanner by Rapid": {
+            "custom_header": [
+                ""
+            ],
+            "method": "get",
+            "post_data": "",
+            "regex": "<td>(.*?)</td>\n<td><a href=\"",
+            "url": "https://rapiddns.io/subdomain/{raw_lists}?full=1"
         }
     }
 }
