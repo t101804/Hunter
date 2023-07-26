@@ -1,9 +1,9 @@
 {
     "application": {
-        "apikey_repproject": "cokkontol",
-        "reqtimeout": 60,
-        "save-error": "off",
-        "reqmaxbytes": "40mb"
+        "apikey_repproject": "asw",
+        "reqtimeout": 25,
+        "save-error": "on",
+        "reqmaxbytes": "10000mb"
     },
     "server": {
         "server_reverse_ip": {
@@ -39,6 +39,24 @@
             "regex": "/site/(.*?)\""
 
         },
+        "Reverse IP seo-auditor post methods": {
+            "custom_header": [
+                "referer:tools.seo-auditor.com.ru/check-ip/"
+            ],
+            "method": "post",
+            "post_data": "url={ip}",
+            "regex": "<th align=\"left\" nowrap>\u0414\u043E\u043C\u0435\u043D:<\/th>\\s+<td width=\"100%\">(.*?)<\/td>",
+            "url": "https://tools.seo-auditor.com.ru/tools/check-ip/"
+        },
+        "Reverse IP seo-auditor Get": {
+            "custom_header": [
+                
+            ],
+            "method": "get",
+            "post_data": "",
+            "regex": "\"\\d+\";\"([^\"]+)\"",
+            "url": "https://tools.seo-auditor.com.ru/ip-site/export/ip-site_{ip}.csv"
+        },
         "leakix":{
             "url": "https://leakix.net/search?page={page}&q=sftp&scope=leak",
             "method": "get",
@@ -52,6 +70,15 @@
             "custom_header": [""],
             "post_data": "",
             "regex": "<td>(.*?)</td>"
+        },
+        "Subdomains Scanner by Rapid": {
+            "custom_header": [
+                ""
+            ],
+            "method": "get",
+            "post_data": "",
+            "regex": "<td>(.*?)</td>\n<td><a href=\"",
+            "url": "https://rapiddns.io/subdomain/{raw_lists}?full=1"
         }
     }
 }
