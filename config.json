@@ -5,69 +5,17 @@
         "reqtimeout": 25,
         "save-error": "on"
     },
+    "comment":"please copy paste the rentry config templates ( reverse/grabber/etc ) in below",
     "custom_server": {
-        "ip grabber by bitvzero": {
+        "You Can Put Any Custom Config": {
             "custom_header": [
                 "Content-Type:*/*",
                 "User-agent:Mozilla/5.0"
             ],
             "method": "get",
             "post_data": "",
-            "regex": "/ip/(.*?)\"",
-            "url": "http://bitverzo.com/recent_ip?p={page}"
-        },
-        "leakix": {
-            "custom_header": [
-                ""
-            ],
-            "method": "get",
-            "post_data": "",
-            "regex": "/domain/(.*?)\"",
-            "url": "https://leakix.net/search?page={page}&q=sftp&scope=leak"
-        },
-        "rapiddns": {
-            "custom_header": [
-                ""
-            ],
-            "method": "get",
-            "post_data": "",
-            "regex": "<td>(.*?)</td>",
-            "url": "https://rapiddns.io/sameip/{ip}?full=1"
-        },
-        "Reverse IP seo-auditor Get": {
-            "custom_header": [],
-            "method": "get",
-            "post_data": "",
-            "regex": "\"\\d+\";\"([^\"]+)\"",
-            "url": "https://tools.seo-auditor.com.ru/ip-site/export/ip-site_{ip}.csv"
-        },
-        "Reverse IP seo-auditor post methods": {
-            "custom_header": [
-                "referer:tools.seo-auditor.com.ru/check-ip/"
-            ],
-            "method": "post",
-            "post_data": "url={ip}",
-            "regex": "<th align=\"left\" nowrap>\u0414\u043E\u043C\u0435\u043D:<\/th>\\s+<td width=\"100%\">(.*?)<\/td>",
-            "url": "https://tools.seo-auditor.com.ru/tools/check-ip/"
-        },
-        "Subdomains Scanner by Rapid": {
-            "custom_header": [
-                ""
-            ],
-            "method": "get",
-            "post_data": "",
-            "regex": "<td>(.*?)</td>\n<td><a href=\"",
-            "url": "https://rapiddns.io/subdomain/{raw_lists}?full=1"
-        },
-        "web grabber by cubdomains": {
-            "custom_header": [
-                "Content-Type:*/*",
-                "User-agent:Mozilla/5.0"
-            ],
-            "method": "get",
-            "post_data": "",
-            "regex": "/site/(.*?)\"",
-            "url": "https://www.cubdomain.com/domains-registered-by-date/2023-07-09/{page}"
+            "regex": "RegexOfTheResults",
+            "url": "ExampleUrlOfTheCustomServer"
         }
     },
     "server": {
