@@ -117,7 +117,6 @@ Basic config documentation for repproject server
             "url": "",
             "method": "",
             "custom_header": [],
-            "total_page": "",
             "post_data": "",
             "regex": ""
         },
@@ -125,7 +124,6 @@ Basic config documentation for repproject server
           "url": "",
           "method": "",
           "custom_header": [],
-          "total_page": "",
           "post_data": "",
           "regex": ""
       }
