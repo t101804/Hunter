@@ -41,13 +41,14 @@ Back to explaining what Hunter is. Hunter is used to send requests across target
 Hunter not requires anything because its already compiled . it works on cross-platforms such as Unix,Windows and MacOS
 
 Unix/Linux System
+
 ```sh
 git clone https://github.com/t101804/Hunter.git 
 cd Hunter 
 chmod +x hunter_linux 
 ./hunter_linux 
 ```
-if you have error Error /lib/x86_64-linux-gnu/libc.so.6: version not found do this :
+If you using get error "/lib/x86_64-linux-gnu/libc.so.6: version not found do command : 
 ```sh
 sudo add-apt-repository 'deb http://cz.archive.ubuntu.com/ubuntu jammy main'
 sudo update
@@ -112,35 +113,50 @@ Basic config documentation for repproject server
 ## Custom Server
 
 ```json
- "urcustomname":{
-            "url": "",
-            "method": "",
+    "custom_server": {
+        "urcustomname": {
             "custom_header": [],
-            "total_page": "",
+            "method": "",
             "post_data": "",
-            "regex": ""
+            "regex": "",
+            "url": ""
         },
-  "urcustomname2":{
-          "url": "",
-          "method": "",
-          "custom_header": [],
-          "total_page": "",
-          "post_data": "",
-          "regex": ""
-      }
+        "examples_custom_config_for_reverse_rapid_methods_GET": {
+            "custom_header": [
+                "Content-Type:*/*",
+                "User-agent:Mozilla/5.0"
+            ],
+            "method": "get",
+            "post_data": "",
+            "regex": "<td>(.*?)</td>",
+            "url": "https://rapiddns.io/sameip/{ip}?full=1"
+        },
+        "examples_custom_config_for_reverse_seoaudit_methods_POST": {
+            "custom_header": [
+                "referer:tools.seo-auditor.com.ru/check-ip/"
+            ],
+            "method": "post",
+            "post_data": "url={ip}",
+            "regex": "<th align=\"left\" nowrap>\u0414\u043E\u043C\u0435\u043D:<\/th>\\s+<td width=\"100%\">(.*?)<\/td>",
+            "url": "https://tools.seo-auditor.com.ru/tools/check-ip/"
+        }
+        
+    }
 ```
 <b>make sure u put "," if you want add a new custom name again if you have any json error make sure you make a valid json type </b>
 
 <b>you can add unlimited custom server you want</b>
 
 ### "url"  ( must fill )
-you can fill whatever you want and this have 3 parameter that you can use 
-- {page} : loop the page examples you put 50 page it will loop 1-50 with threadings : 
-  ```http://bitverzo.com/recent_ip?p={page}```
-- {total} : the total pages its using manual loopings ( if you confuse please watch the vidio ) : ```https://repcyber.com/vipgrab/ip/{total}```
-- {site} : make sure the lists have format sitelist type then run the parameter : ```https://repcyber.com/analyzer/{site}```
-- {ip} : if the lists is site is auto change to ip then run the parameter : ```https://repcyber.com/reverse/{ip}```
+you can put the url and if url have parameter you can put the parameter
 
+## "{parameter} ( must fill )
+you can fill whatever you want and this have 3 parameter that you can use in URL or POST_DATA 
+- {page} : loop the page examples you put 50 page it will loop 1-50 with threadings 
+- {total} : the total pages its using manual loopings ( if you confuse please watch the vidio ) 
+- {site} : make sure the lists have format sitelist type then run the parameter 
+- {ip} : if the lists is site is auto change to ip then run the parameter 
+- {raw_lists} : run the lists without filtering anything
 ### "method" ( must fill )
 this only have 2 method "get" and "post" only ( make sure its lowercase )
 
@@ -152,7 +168,7 @@ example usage :
 ### "post_data ( use this if you using post method )" 
 example usage :
 - ```"post_data": "param1=value&param2=value2",```
-
+- you can also use parameter ```"post_data": "ip={ip}",```
 ### "regex" ( keep it blank if you want save all pages ): 
 <b>if your regex contains " escape with \ so it will be \" for the escape</b>
 example usage :
