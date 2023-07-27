@@ -19,6 +19,7 @@
 </p>
       
 <p align="center">
+  <a href="https://github.com/t101804/Hunter/blob/main/README_VIP.md">Buy VIP API Access RepProject</a> •
   <a href="#why-not-open-source-?">Why not open source?</a> •
   <a href="#install-hunter">Install</a> •
   <a href="#documentation">Documentation</a> •
