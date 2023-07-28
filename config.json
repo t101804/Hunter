@@ -58,11 +58,11 @@
             "url": "https://tools.seo-auditor.com.ru/ip-site/export/ip-site_{ip}.csv"
         },
         "leakix":{
-            "url": "https://leakix.net/search?page={page}&q=sftp&scope=leak",
+            "url": "https://leakix.net/search?page={page}&q=%2Bplugin%3A%22VsCodeSFTPPlugin%22+%2Bcountry%3A%22Germany%22&scope=leak",
             "method": "get",
-            "custom_header": [""],
+            "custom_header": ["LEAKIX_SESSION:b5211370a0dda75257dc766eb29c0becb8411f69-%00csrf_token%3AoBx2CWvc2u6utEML4e8xjJJcnbMSZZXyVuzxbvS8JHQ%3D%00%00VK%3Aa5160c91875eed8436574d6d1a115bfc6ce0ba3d0cf19a3adf7afb02f56597f4f9dcc18296c6be8849%00%00_TS%3A1690639062%00", "LEAKIX_FLASH:"],
             "post_data": "",
-            "regex": "/domain/(.*?)\""
+            "regex": "target=\"_blank\">(.*?) </a><br/>"
         },
         "rapiddns":{
             "url": "https://rapiddns.io/sameip/{ip}?full=1",
