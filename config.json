@@ -50,7 +50,7 @@
         },
         "Reverse IP seo-auditor Get": {
             "custom_header": [
-                
+    
             ],
             "method": "get",
             "post_data": "",
@@ -60,9 +60,22 @@
         "leakix":{
             "url": "https://leakix.net/search?page={page}&q=%2Bplugin%3A%22VsCodeSFTPPlugin%22+%2Bcountry%3A%22Germany%22&scope=leak",
             "method": "get",
-            "custom_header": ["LEAKIX_SESSION:b5211370a0dda75257dc766eb29c0becb8411f69-%00csrf_token%3AoBx2CWvc2u6utEML4e8xjJJcnbMSZZXyVuzxbvS8JHQ%3D%00%00VK%3Aa5160c91875eed8436574d6d1a115bfc6ce0ba3d0cf19a3adf7afb02f56597f4f9dcc18296c6be8849%00%00_TS%3A1690639062%00", "LEAKIX_FLASH:"],
+            "custom_header": [
+                "LEAKIX_SESSION:b5211370a0dda75257dc766eb29c0becb8411f69-%00csrf_token%3AoBx2CWvc2u6utEML4e8xjJJcnbMSZZXyVuzxbvS8JHQ%3D%00%00VK%3Aa5160c91875eed8436574d6d1a115bfc6ce0ba3d0cf19a3adf7afb02f56597f4f9dcc18296c6be8849%00%00_TS%3A1690639062%00", 
+                "LEAKIX_FLASH:"
+            ],
             "post_data": "",
             "regex": "target=\"_blank\">(.*?) </a><br/>"
+        },
+        "shodan":{
+            "url": "https://www.shodan.io/search?query={raw_lists}&page=1",
+            "method": "get",
+            "custom_header": [
+                "polito:\"f291f55dab46c96d664a36bad281a2d264c3d3ea628a031e8f9ab2444d532c0e!\"",
+                "cf_clearance:jSYgtolEAWSZU4vlgwDF73lY24L6z.9HdB1AAWTN__M-1690555530-0-150.0.0"
+        ],
+            "post_data": "",
+            "regex": "/host/(.*?)\""
         },
         "rapiddns":{
             "url": "https://rapiddns.io/sameip/{ip}?full=1",
