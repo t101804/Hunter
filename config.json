@@ -1,97 +1,67 @@
 {
     "application": {
         "apikey_repproject": "asw",
+        "reqmaxbytes": "10000mb",
         "reqtimeout": 25,
-        "save-error": "on",
-        "reqmaxbytes": "10000mb"
-    },
-    "server": {
-        "server_reverse_ip": {
-          "all records ( grab all of records )": "https://repcyber.com/allreverse/{ip}",
-          "a records ( a tld domains only )": "https://repcyber.com/reverse/{ip}",
-          "ns records ( nameserver only )": "https://repcyber.com/revip_ns/{ip}",
-          "mx recods ( mailserver only )": "https://repcyber.com/revip_mx/{ip}",
-          "cname records ( cname only )": "https://repcyber.com/revip_cname/{ip}"
-        },
-        "server_grabber": {
-          "grab ip records": "https://repcyber.com/vipgrab/ip/{total}",
-          "grab amazon records": "https://repcyber.com/vipgrab/amazonaws.com/total/{total}",
-          "grab tld domain records": ""
-        },
-        "server_utility": {
-          "analyze site ( check cms and tech )": "https://repcyber.com/analyzer/{site}",
-          "cpanel checker": "https://repcyber.com/checker/cpanel/{raw_lists}"
-        }
+        "save-error": "off"
     },
     "custom_server": {
-        "ip grabber by bitvzero": {
-            "url": "http://bitverzo.com/recent_ip?p={page}",
-            "method": "get",
-            "custom_header": ["Content-Type:*/*", "User-agent:Mozilla/5.0"],
-            "post_data": "",
-            "regex": "/ip/(.*?)\""
-        },
-        "web grabber by cubdomains": {
-            "url": "https://www.cubdomain.com/domains-registered-by-date/2023-07-09/{page}",
-            "method": "get",
-            "custom_header": ["Content-Type:*/*", "User-agent:Mozilla/5.0"],
-            "post_data": "",
-            "regex": "/site/(.*?)\""
-
-        },
-        "Reverse IP seo-auditor post methods": {
-            "custom_header": [
-                "referer:tools.seo-auditor.com.ru/check-ip/"
-            ],
-            "method": "post",
-            "post_data": "url={ip}",
-            "regex": "<th align=\"left\" nowrap>\u0414\u043E\u043C\u0435\u043D:<\/th>\\s+<td width=\"100%\">(.*?)<\/td>",
-            "url": "https://tools.seo-auditor.com.ru/tools/check-ip/"
-        },
-        "Reverse IP seo-auditor Get": {
-            "custom_header": [
-    
-            ],
-            "method": "get",
-            "post_data": "",
-            "regex": "\"\\d+\";\"([^\"]+)\"",
-            "url": "https://tools.seo-auditor.com.ru/ip-site/export/ip-site_{ip}.csv"
-        },
-        "leakix":{
-            "url": "https://leakix.net/search?page={page}&q=%2Bplugin%3A%22VsCodeSFTPPlugin%22+%2Bcountry%3A%22Germany%22&scope=leak",
-            "method": "get",
-            "custom_header": [
-                "LEAKIX_SESSION:b5211370a0dda75257dc766eb29c0becb8411f69-%00csrf_token%3AoBx2CWvc2u6utEML4e8xjJJcnbMSZZXyVuzxbvS8JHQ%3D%00%00VK%3Aa5160c91875eed8436574d6d1a115bfc6ce0ba3d0cf19a3adf7afb02f56597f4f9dcc18296c6be8849%00%00_TS%3A1690639062%00", 
-                "LEAKIX_FLASH:"
-            ],
-            "post_data": "",
-            "regex": "target=\"_blank\">(.*?) </a><br/>"
-        },
-        "shodan":{
-            "url": "https://www.shodan.io/search?query={raw_lists}&page=1",
-            "method": "get",
-            "custom_header": [
-                "polito:\"f291f55dab46c96d664a36bad281a2d264c3d3ea628a031e8f9ab2444d532c0e!\"",
-                "cf_clearance:jSYgtolEAWSZU4vlgwDF73lY24L6z.9HdB1AAWTN__M-1690555530-0-150.0.0"
-        ],
-            "post_data": "",
-            "regex": "/host/(.*?)\""
-        },
-        "rapiddns":{
-            "url": "https://rapiddns.io/sameip/{ip}?full=1",
-            "method": "get",
-            "custom_header": [""],
-            "post_data": "",
-            "regex": "<td>(.*?)</td>"
-        },
-        "Subdomains Scanner by Rapid": {
+        "If you want more CONFIG AND MORE CONFIG FREE REVERSE/GRABBER/ETC YOU CAN JOIN @REPPROJECT TELEGRAM CHANNELS": {
             "custom_header": [
                 ""
             ],
             "method": "get",
             "post_data": "",
-            "regex": "<td>(.*?)</td>\n<td><a href=\"",
-            "url": "https://rapiddns.io/subdomain/{raw_lists}?full=1"
+            "regex": "",
+            "url": ""
+        },
+        "leakix": {
+            "custom_header": [
+                "LEAKIX_SESSION:b5211370a0dda75257dc766eb29c0becb8411f69-%00csrf_token%3AoBx2CWvc2u6utEML4e8xjJJcnbMSZZXyVuzxbvS8JHQ%3D%00%00VK%3Aa5160c91875eed8436574d6d1a115bfc6ce0ba3d0cf19a3adf7afb02f56597f4f9dcc18296c6be8849%00%00_TS%3A1690639062%00",
+                "LEAKIX_FLASH:"
+            ],
+            "method": "get",
+            "post_data": "",
+            "regex": "target=\"_blank\">(.*?) </a><br/>",
+            "url": "https://leakix.net/search?page={page}&q=%2Bplugin%3A%22VsCodeSFTPPlugin%22+%2Bcountry%3A%22Germany%22&scope=leak"
+        },
+        "Reverse IP BY RAPIDDNS": {
+            "custom_header": [
+                ""
+            ],
+            "method": "get",
+            "post_data": "",
+            "regex": "<td>(.*?)</td>",
+            "url": "https://rapiddns.io/sameip/{ip}?full=1"
+        },
+
+        "web grabber by cubdomains": {
+            "custom_header": [
+                "Content-Type:*/*",
+                "User-agent:Mozilla/5.0"
+            ],
+            "method": "get",
+            "post_data": "",
+            "regex": "/site/(.*?)\"",
+            "url": "https://www.cubdomain.com/domains-registered-by-date/2023-07-09/{page}"
+        }
+    },
+    "server": {
+        "server_grabber": {
+            "grab amazon records": "https://repcyber.com/vipgrab/amazonaws.com/total/{total}",
+            "grab ip records": "https://repcyber.com/vipgrab/ip/{total}",
+            "grab tld domain records": ""
+        },
+        "server_reverse_ip": {
+            "a records ( a tld domains only )": "https://repcyber.com/reverse/{ip}",
+            "all records ( grab all of records )": "https://repcyber.com/allreverse/{ip}",
+            "cname records ( cname only )": "https://repcyber.com/revip_cname/{ip}",
+            "mx recods ( mailserver only )": "https://repcyber.com/revip_mx/{ip}",
+            "ns records ( nameserver only )": "https://repcyber.com/revip_ns/{ip}"
+        },
+        "server_utility": {
+            "analyze site ( check cms and tech )": "https://repcyber.com/analyzer/{site}",
+            "cpanel checker": "https://repcyber.com/checker/cpanel/{raw_lists}"
         }
     }
 }
