@@ -3,8 +3,8 @@
         "apikey_repproject": "asw",
         "reqtimeout": 25,
         "save-error": "off",
-        "reqmaxbytes": "10000mb",
-        "no-duplicate-results": "on",
+        "reqmaxbytes": "100mb",
+        "no-duplicate-results": "off",
         "bypass-cloudflare-req": "on",
         "proxy": ""
     },
