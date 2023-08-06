@@ -2,7 +2,7 @@
     "application": {
         "apikey_repproject": "asw",
         "reqtimeout": 25,
-        "save-error": "on",
+        "save-error": "off",
         "reqmaxbytes": "10000mb",
         "no-duplicate-results": "on",
         "bypass-cloudflare-req": "on",
