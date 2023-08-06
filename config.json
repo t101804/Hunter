@@ -34,7 +34,27 @@
             "regex": "<td>(.*?)</td>",
             "url": "https://rapiddns.io/sameip/{ip}?full=1"
         },
-
+      
+        "Grabber Site TLD by bestwebsiterank": {
+            "custom_header": [
+                ""
+            ],
+            "method": "get",
+            "post_data": "",
+            "regex": "<a href=\"https://bestwebsiterank.com/(.*?)/\"><img src=",
+            "comments": "you can change .de to whatever tld u wants",
+            "url": "https://bestwebsiterank.com/domains/.de/{page}"
+        },
+        "Grabber IP Server TLD by bestwebsiterank": {
+            "custom_header": [
+                ""
+            ],
+            "method": "get",
+            "post_data": "",
+            "regex": "</td><td><strong>(.*?)</strong></td><td><img src=\"blank.gif\"",
+            "comments": "you can change .de to whatever tld u wants",
+            "url": "https://bestwebsiterank.com/domains/.de/{page}"
+        },
         "web grabber by cubdomains": {
             "custom_header": [
                 "Content-Type:*/*",
