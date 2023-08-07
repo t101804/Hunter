@@ -1,15 +1,16 @@
 {
     "application": {
-        "apikey_repproject": "placehereyourapikey",
+        "apikey_repproject": "aswasx",
         "reqtimeout": 25,
-        "save-error": "off",
-        "reqmaxbytes": "100mb",
-        "no-duplicate-results": "off",
-        "bypass-cloudflare-req": "off",
+        "save-error": "on",
+        "reqmaxbytes": "10000mb",
+        "no-duplicate-results": "on",
+        "bypass-cloudflare-req": "on",
         "proxy": ""
     },
     "server": {
         "server_reverse_ip": {
+          "cidr a records ( auto-cidr for a records )": "https://repcyber.com/reversecidr/{ip}",
           "all records ( grab all of records )": "https://repcyber.com/allreverse/{ip}",
           "a records ( a tld domains only )": "https://repcyber.com/reverse/{ip}",
           "ns records ( nameserver only )": "https://repcyber.com/revip_ns/{ip}",
@@ -27,13 +28,27 @@
         }
     },
     "custom_server": {
-        "Reverse IP Security Trails ( use proxy and cloudflare bypass )": {
+        "Grabber Site AS Name by DNPEDIA - GOOD QUALITY GRABBER ": {
             "custom_header": [
+                "accept: application/json, text/javascript, */*; q=0.01",
+                "accept-encoding: gzip, deflate, br",
+                "accept-language: en-US,en;q=0.9",
+                "connection: keep-alive",
+                "cookie: PHPSESSID=pjmjgcdovk1d3qmotbr4u1ctrj; _jsuid=1736353364",
+                "host: dnpedia.com",
+                "referer: https://dnpedia.com/tlds/ipdata.php",
+                "sec-ch-ua-mobile: ?0",
+                "sec-fetch-dest: empty",
+                "sec-fetch-mode: cors",
+                "sec-fetch-site: same-origin",
+                "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
+                "x-requested-with: XMLHttpRequest"
             ],
             "method": "get",
             "post_data": "",
-            "regex": "\"/domain/(.*?)/dns",
-            "url": "https://securitytrails.com/list/ip/{ip}"
+            "regex": "name\":\"(.*?)\"",
+            "comments": "you can change AMAZON to whatever u wants to search AS NAME",
+            "url": "https://dnpedia.com/tlds/ajax.php?cmd=ipdata&m=mon&columns=id,ipv4,ipasname,ipasnumber,name,zoneid,length,idn,thedate,ipchecked,&days=2&mode=added&_search=true&nd=1691165760901&rows=500&page={page}&sidx=ipasnumber&sord=asc&filters=%7B%22groupOp%22%3A%22AND%22%2C%22rules%22%3A%5B%7B%22field%22%3A%22ipasname%22%2C%22op%22%3A%22cn%22%2C%22data%22%3A%22AMAZON%22%7D%5D%7D"
         },
         "Reverse ip by TatsumiCrew POST API": {
             "custom_header": [
